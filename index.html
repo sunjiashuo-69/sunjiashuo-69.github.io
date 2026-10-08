@@ -63,12 +63,6 @@
   .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: var(--card); }
   .btn-ghost:hover { border-color: var(--ink-dim); }
 
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 46px 0 0; }
-  .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
-  .stat .num { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
-  .stat .num b { color: #c9a200; }
-  .stat .lbl { font-size: 13px; color: var(--ink-dim); margin-top: 2px; }
-
   section { padding: 72px 0; }
   .sec-tag { font-size: 13px; font-weight: 600; color: #c9a200; letter-spacing: 2px; margin-bottom: 8px; }
   h2 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
@@ -135,7 +129,7 @@
   @media (max-width: 760px) {
     .nav-links { display: none; }
     .hero { padding: 56px 0 44px; }
-    .stats, .projects, .ai-grid { grid-template-columns: 1fr; }
+    .projects, .ai-grid { grid-template-columns: 1fr; }
     section { padding: 52px 0; }
     .ai-band { padding: 32px 24px; }
   }
@@ -161,11 +155,6 @@
     <div class="btn-row">
       <a class="btn btn-dark" href="#projects">查看项目复盘</a>
       <a class="btn btn-ghost" href="#contact">联系我</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="num">2000<b>+</b></div><div class="lbl">全国在营门店平台侧经营</div></div>
-      <div class="stat"><div class="num">3</div><div class="lbl">不同行业完整项目复盘</div></div>
-      <div class="stat"><div class="num">12<b>+</b></div><div class="lbl">核心 SKU AI 竞对监控</div></div>
     </div>
   </div>
 </header>
