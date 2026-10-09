@@ -51,6 +51,15 @@
   h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
   .sec-desc { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 30px; }
 
+  .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
+  .st { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+  .st .star {
+    display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px;
+    border-radius: 9px; background: var(--accent); color: var(--ink); font-weight: 700; font-size: 15px; margin-bottom: 12px;
+  }
+  .st h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+  .st p { font-size: 14px; color: var(--ink-soft); }
+
   .plays { display: flex; flex-direction: column; }
   .play { display: flex; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
   .play:last-child { border-bottom: none; }
@@ -90,11 +99,11 @@
   .deck-shot a:hover img { transform: translateY(-4px); box-shadow: 0 26px 52px rgba(26,26,26,.16); }
 
   @media (max-width: 760px) {
-    .stats, .results { grid-template-columns: 1fr 1fr; }
+    .stats, .results, .st-grid { grid-template-columns: 1fr 1fr; }
     section { padding: 44px 0; }
   }
   @media (max-width: 480px) {
-    .stats, .results { grid-template-columns: 1fr; }
+    .stats, .results, .st-grid { grid-template-columns: 1fr; }
     .play { gap: 14px; }
   }
 </style>
@@ -130,27 +139,41 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-tag">APPROACH</div>
+    <div class="sec-tag">SITUATION / TASK</div>
+    <h2>背景与任务</h2>
+    <div class="st-grid">
+      <div class="st">
+        <div class="star">S</div>
+        <h4>情境：实体卡牌 × 顶流手游</h4>
+        <p>卡游（实体卡牌头部品牌）与海外顶流手游 MLBB 达成异业合作，覆盖印尼、马来西亚、新加坡三国，核心卖点：「虚拟游戏 × 实体卡牌」的 O2O 闭环。</p>
+      </div>
+      <div class="st">
+        <div class="star">T</div>
+        <h4>任务：项目 PM 操盘全链路</h4>
+        <p>作为项目 PM，统筹三国整合营销策略方案，从创意、传播节奏到跨国直播全链路负责，目标是提升社群热度并带动终端门店动销转化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">ACTION</div>
     <h2>我是怎么打的</h2>
-    <p class="sec-desc">「虚拟游戏 × 实体卡牌」的 O2O 闭环，四个环节拆解。</p>
+    <p class="sec-desc">「虚拟游戏 × 实体卡牌」的 O2O 闭环，三个关键动作。</p>
     <div class="plays">
       <div class="play">
         <div class="no">01</div>
-        <div><h3>项目背景与任务</h3>
-        <p>作为项目 PM 操盘卡游与海外顶流手游 MLBB 的异业合作直播项目，统筹印尼、马来西亚及新加坡三国整合营销策略方案，围绕「虚拟游戏 × 实体卡牌」核心卖点跑通 O2O 闭环链路，提升社群热度及终端动销转化。</p></div>
-      </div>
-      <div class="play">
-        <div class="no">02</div>
         <div><h3>核心创意玩法设计</h3>
         <p>基于 MLBB 世界观打造「光 vs 暗」阵营对抗概念，将卡牌稀有度（SP 卡）与阵营绑定，激发玩家站队讨论，实现社交媒体长尾话题发酵。</p></div>
       </div>
       <div class="play">
-        <div class="no">03</div>
+        <div class="no">02</div>
         <div><h3>全周期传播节奏搭建</h3>
         <p>设计并执行「预热期（KOL 短视频种草 #MLBB X KAYOU 话题）— 爆发期（TikTok 跨国双城直播对抗）— 长尾期（线下门店兑换 + 探店二次传播）」的整合营销模型。</p></div>
       </div>
       <div class="play">
-        <div class="no">04</div>
+        <div class="no">03</div>
         <div><h3>达人矩阵与直播管理</h3>
         <p>深度负责跨国直播机制及冷启动策略，协同 8 位 KOL 完成 15+ 官方定制内容及多条达人裂变内容，通过「限定卡牌 + 独占兑换」机制打通线上线下门店的引流转化。制作高热度跨国联合直播「印马双城之战：光 VS 暗对抗」，统筹 KAYOU、MLBB 两地共 4 位顶流 KOL，直播峰值达 1W+ 人次。</p></div>
       </div>
@@ -171,7 +194,7 @@
 
 <section style="padding-top: 0;">
   <div class="wrap">
-    <div class="sec-tag">RESULTS</div>
+    <div class="sec-tag">RESULT</div>
     <h2>成果与沉淀</h2>
     <p class="sec-desc">数据口径：项目全程投放与内容监测汇总。</p>
     <div class="results">

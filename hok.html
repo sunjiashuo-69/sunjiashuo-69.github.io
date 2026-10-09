@@ -71,6 +71,15 @@
   h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
   .sec-desc { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 30px; }
 
+  .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
+  .st { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+  .st .star {
+    display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px;
+    border-radius: 9px; background: var(--accent); color: var(--ink); font-weight: 700; font-size: 15px; margin-bottom: 12px;
+  }
+  .st h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+  .st p { font-size: 14px; color: var(--ink-soft); }
+
   .plays { display: flex; flex-direction: column; }
   .play { display: flex; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
   .play:last-child { border-bottom: none; }
@@ -110,12 +119,12 @@
   .deck-shot a:hover img { transform: translateY(-4px); box-shadow: 0 26px 52px rgba(26,26,26,.16); }
 
   @media (max-width: 760px) {
-    .stats, .results { grid-template-columns: 1fr 1fr; }
+    .stats, .results, .st-grid { grid-template-columns: 1fr 1fr; }
     .poster-in { padding: 80px 0 36px; }
     section { padding: 44px 0; }
   }
   @media (max-width: 480px) {
-    .stats, .results { grid-template-columns: 1fr; }
+    .stats, .results, .st-grid { grid-template-columns: 1fr; }
     .play { gap: 14px; }
   }
 </style>
@@ -151,32 +160,46 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-tag">APPROACH</div>
+    <div class="sec-tag">SITUATION / TASK</div>
+    <h2>背景与任务</h2>
+    <div class="st-grid">
+      <div class="st">
+        <div class="star">S</div>
+        <h4>情境：跨年 S 级节点</h4>
+        <p>腾讯 HOK（王者荣耀海外版）的跨年核心营销节点：KIS4 年度总决赛叠加新玩法「三国争霸」与新英雄上线，主战场印尼，面向东南亚核心及泛娱乐玩家。</p>
+      </div>
+      <div class="st">
+        <div class="star">T</div>
+        <h4>任务：项目 PM 统筹全案</h4>
+        <p>作为项目 PM，围绕赛事节点与新版本内容，面向东南亚市场完成全通路策略拆解、创意输出与跨国资源协同，交付一场 S 级整合营销。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">ACTION</div>
     <h2>我是怎么打的</h2>
-    <p class="sec-desc">从策略拆解、内容共创到线下落地，五个环节的完整打法。</p>
+    <p class="sec-desc">从内容共创到线下落地，四个关键动作。</p>
     <div class="plays">
       <div class="play">
         <div class="no">01</div>
-        <div><h3>项目背景与任务</h3>
-        <p>负责 HOK（王者荣耀海外版）跨年核心整合营销，围绕 KIS4 年度赛事节点、新玩法「三国争霸」及新英雄、印尼本地化皮肤资产，面向东南亚核心及泛娱乐玩家进行全通路策略拆解、创意输出与资源协同。</p></div>
-      </div>
-      <div class="play">
-        <div class="no">02</div>
         <div><h3>剧情化玩法拆解与脚本共创</h3>
         <p>将「三国争霸」模式的功能说明转化为「剧情化 / 对抗感」内容，深度参与头部游戏 KOL 视频脚本设计，优化内容结构以强化前 3 秒黄金吸引力，大幅提升完播率。</p></div>
       </div>
       <div class="play">
-        <div class="no">03</div>
+        <div class="no">02</div>
         <div><h3>大厂核心视觉资产全流程把控</h3>
         <p>全流程负责新英雄「海月」跨国整合内容视觉产出，统筹海外 Cosplay 顶级资源筛选、定制化服装跨境物流与多平台内容分发，成功打造视觉记忆点。</p></div>
       </div>
       <div class="play">
-        <div class="no">04</div>
+        <div class="no">03</div>
         <div><h3>印尼本土文化借势营销</h3>
         <p>主导 HOK 印尼本地化「皮影戏（Wayang）」皮肤的内容出海营销；深度联动印尼本土制作团队，输出兼具文化共鸣与商业属性的细节实机展示内容，引发本土玩家强烈共鸣。</p></div>
       </div>
       <div class="play">
-        <div class="no">05</div>
+        <div class="no">04</div>
         <div><h3>S 级跨国赛事线下落地统筹</h3>
         <p>全盘统筹 KIS4 印尼总决赛现场 20+ 达人彩排、流程调度及博物馆等线下场景的内容传播协同，确保跨国大项目落地零失误。</p></div>
       </div>
@@ -197,7 +220,7 @@
 
 <section style="padding-top: 0;">
   <div class="wrap">
-    <div class="sec-tag">RESULTS</div>
+    <div class="sec-tag">RESULT</div>
     <h2>成果与沉淀</h2>
     <p class="sec-desc">数据口径：项目全程投放与内容监测汇总。</p>
     <div class="results">
