@@ -82,6 +82,13 @@
   .pager .name { font-size: 14.5px; font-weight: 600; margin-top: 2px; }
   .pager a.next { text-align: right; }
 
+  .deck-shot img {
+    width: 100%; display: block; border-radius: 16px; border: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(26,26,26,.10); transition: transform .25s, box-shadow .25s;
+  }
+  .deck-shot a { display: block; }
+  .deck-shot a:hover img { transform: translateY(-4px); box-shadow: 0 26px 52px rgba(26,26,26,.16); }
+
   @media (max-width: 760px) {
     .stats, .results { grid-template-columns: 1fr 1fr; }
     section { padding: 44px 0; }
@@ -171,6 +178,17 @@
       <div class="sec-tag">TAKEAWAY</div>
       <h2>可复用的方法论</h2>
       <p>跑通「游戏 IP × 实体消费品」的异业整合模型：以世界观阵营机制做社交话题引擎，以限定权益打通线下终端，可直接复用于潮玩、卡牌与游戏 IP 的联动营销。</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="deck-shot">
+      <div class="sec-tag">ORIGINAL DECK</div>
+      <h2>复盘原片</h2>
+      <p class="sec-desc">交付给团队的 PPT 原版页面（16:9），点击可查看大图。</p>
+      <a href="assets/slide-kayou.png" target="_blank" title="点击查看大图"><img src="assets/slide-kayou.png" alt="KAYOU × MLBB 复盘 PPT 原版页"></a>
     </div>
   </div>
 </section>
