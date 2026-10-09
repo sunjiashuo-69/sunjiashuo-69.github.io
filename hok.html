@@ -29,15 +29,30 @@
   .topbar .brand span { color: var(--ink-dim); font-weight: 400; }
 
   .poster {
-    position: relative; min-height: 460px; display: flex; align-items: flex-end;
+    position: relative; min-height: 480px; display: flex; align-items: flex-end;
     background: #100d0b url('assets/hok_bg.jpg') center/cover no-repeat; overflow: hidden;
   }
+  /* 宽屏：底层放大模糊铺满全宽，避免两侧死黑 */
   @media (min-width: 1100px) {
-    .poster { background-size: auto 100%; background-position: center; }
+    .poster { background: #100d0b; }
+    .poster::before {
+      content: ""; position: absolute; inset: -48px;
+      background: url('assets/hok_bg.jpg') center/cover no-repeat;
+      filter: blur(30px) brightness(.62) saturate(1.05);
+    }
+    /* 清晰原画居中，fit-height，左右边缘羽化融入模糊层 */
+    .poster-art {
+      position: absolute; inset: 0;
+      background: url('assets/hok_bg.jpg') center/auto 100% no-repeat;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+    }
   }
-  .poster::before {
+  .poster::after {
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(10,7,5,.30) 0%, rgba(10,7,5,.62) 62%, rgba(10,7,5,.88) 100%);
+    background:
+      linear-gradient(90deg, rgba(10,7,5,.62) 0%, rgba(10,7,5,.28) 32%, rgba(10,7,5,0) 58%),
+      linear-gradient(180deg, rgba(10,7,5,.28) 0%, rgba(10,7,5,.50) 62%, rgba(10,7,5,.85) 100%);
   }
   .poster-in { position: relative; z-index: 1; width: 100%; padding: 120px 0 44px; }
   .ptag { display: inline-block; font-size: 12.5px; font-weight: 600; background: var(--accent); color: var(--ink); padding: 4px 13px; border-radius: 999px; margin-bottom: 16px; }
@@ -115,6 +130,7 @@
 </div>
 
 <header class="poster">
+  <div class="poster-art" aria-hidden="true"></div>
   <div class="wrap poster-in">
     <span class="ptag">游戏出海 · 赛事整合营销</span>
     <h1>腾讯 HOK — KIS4 年度总决赛<br>及版本活动营销</h1>
