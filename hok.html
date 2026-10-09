@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目复盘 · 腾讯 HOK KIS4 年度总决赛 | 佳硕</title>
+<meta name="description" content="腾讯 HOK（王者荣耀海外版）KIS4 年度总决赛整合营销复盘：12M+ 总曝光、平均 CPM $2.3、20+ KOL 矩阵。">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-soft: #55524d; --ink-dim: #9a948c;
+    --paper: #fbfaf7; --card: #ffffff; --line: #e8e4dc;
+    --accent: #ffd100; --accent-deep: #633806; --accent-soft: #faeeda;
+    --radius: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--paper); color: var(--ink); line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(251,250,247,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .topbar-in { display: flex; align-items: center; justify-content: space-between; height: 54px; }
+  .topbar a { font-size: 13.5px; color: var(--ink-soft); text-decoration: none; }
+  .topbar a:hover { color: var(--ink); }
+  .topbar .brand { font-weight: 700; color: var(--ink); }
+  .topbar .brand span { color: var(--ink-dim); font-weight: 400; }
+
+  .poster {
+    position: relative; min-height: 420px; display: flex; align-items: flex-end;
+    background: #141110 url('assets/hok_bg.jpg') center/cover no-repeat; overflow: hidden;
+  }
+  .poster::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,7,5,.30) 0%, rgba(10,7,5,.62) 62%, rgba(10,7,5,.88) 100%);
+  }
+  .poster-in { position: relative; z-index: 1; width: 100%; padding: 120px 0 44px; }
+  .ptag { display: inline-block; font-size: 12.5px; font-weight: 600; background: var(--accent); color: var(--ink); padding: 4px 13px; border-radius: 999px; margin-bottom: 16px; }
+  .poster h1 { color: #fff; font-size: clamp(26px, 4.6vw, 40px); font-weight: 700; line-height: 1.35; letter-spacing: -.3px; text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+  .poster .meta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .poster .meta span { font-size: 12.5px; color: #e8e2d8; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 3px 12px; background: rgba(0,0,0,.25); }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .stat .num { font-size: 28px; font-weight: 700; letter-spacing: -.5px; }
+  .stat .num b { color: #c9a200; }
+  .stat .lbl { font-size: 12.5px; color: var(--ink-dim); margin-top: 2px; }
+
+  section { padding: 56px 0; }
+  .sec-tag { font-size: 13px; font-weight: 600; color: #c9a200; letter-spacing: 2px; margin-bottom: 8px; }
+  h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+  .sec-desc { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 30px; }
+
+  .plays { display: flex; flex-direction: column; }
+  .play { display: flex; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .play:last-child { border-bottom: none; }
+  .play .no {
+    flex: none; width: 44px; height: 44px; border-radius: 12px; background: var(--ink);
+    color: var(--accent); font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .play h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .play p { font-size: 14px; color: var(--ink-soft); }
+
+  .results { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .result { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .result h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .result h4 b { color: #c9a200; }
+  .result p { font-size: 13.5px; color: var(--ink-soft); }
+
+  .callout { background: var(--ink); color: #fff; border-radius: 18px; padding: 34px 36px; }
+  .callout .sec-tag { color: var(--accent); }
+  .callout h2 { color: #fff; font-size: 22px; }
+  .callout p { color: #b8b4ad; font-size: 14.5px; margin-top: 8px; }
+
+  .pager { border-top: 1px solid var(--line); padding: 30px 0 60px; display: flex; justify-content: space-between; gap: 12px; }
+  .pager a {
+    flex: 1; text-decoration: none; color: var(--ink); background: var(--card);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; transition: border-color .2s;
+  }
+  .pager a:hover { border-color: var(--ink-dim); }
+  .pager .dir { font-size: 12px; color: var(--ink-dim); }
+  .pager .name { font-size: 14.5px; font-weight: 600; margin-top: 2px; }
+  .pager a.next { text-align: right; }
+
+  @media (max-width: 760px) {
+    .stats, .results { grid-template-columns: 1fr 1fr; }
+    .poster-in { padding: 80px 0 36px; }
+    section { padding: 44px 0; }
+  }
+  @media (max-width: 480px) {
+    .stats, .results { grid-template-columns: 1fr; }
+    .play { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html">佳硕<span>.site</span></a>
+    <a href="index.html#projects">← 返回项目列表</a>
+  </div>
+</div>
+
+<header class="poster">
+  <div class="wrap poster-in">
+    <span class="ptag">游戏出海 · 赛事整合营销</span>
+    <h1>腾讯 HOK — KIS4 年度总决赛<br>及版本活动营销</h1>
+    <div class="meta">
+      <span>2025.12 – 2026.03</span><span>项目 PM</span><span>印尼 ID 市场 · 东南亚</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="num">12M<b>+</b></div><div class="lbl">项目总累计曝光</div></div>
+    <div class="stat"><div class="num">2M<b>+</b></div><div class="lbl">HOK 游戏锚点精准浏览</div></div>
+    <div class="stat"><div class="num">$2.3</div><div class="lbl">平均 CPM · 远低于行业均值</div></div>
+    <div class="stat"><div class="num">20<b>+</b> / 27</div><div class="lbl">KOL/KOC 位数 / 高质量视频</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-tag">APPROACH</div>
+    <h2>我是怎么打的</h2>
+    <p class="sec-desc">从策略拆解、内容共创到线下落地，五个环节的完整打法。</p>
+    <div class="plays">
+      <div class="play">
+        <div class="no">01</div>
+        <div><h3>项目背景与任务</h3>
+        <p>负责 HOK（王者荣耀海外版）跨年核心整合营销，围绕 KIS4 年度赛事节点、新玩法「三国争霸」及新英雄、印尼本地化皮肤资产，面向东南亚核心及泛娱乐玩家进行全通路策略拆解、创意输出与资源协同。</p></div>
+      </div>
+      <div class="play">
+        <div class="no">02</div>
+        <div><h3>剧情化玩法拆解与脚本共创</h3>
+        <p>将「三国争霸」模式的功能说明转化为「剧情化 / 对抗感」内容，深度参与头部游戏 KOL 视频脚本设计，优化内容结构以强化前 3 秒黄金吸引力，大幅提升完播率。</p></div>
+      </div>
+      <div class="play">
+        <div class="no">03</div>
+        <div><h3>大厂核心视觉资产全流程把控</h3>
+        <p>全流程负责新英雄「海月」跨国整合内容视觉产出，统筹海外 Cosplay 顶级资源筛选、定制化服装跨境物流与多平台内容分发，成功打造视觉记忆点。</p></div>
+      </div>
+      <div class="play">
+        <div class="no">04</div>
+        <div><h3>印尼本土文化借势营销</h3>
+        <p>主导 HOK 印尼本地化「皮影戏（Wayang）」皮肤的内容出海营销；深度联动印尼本土制作团队，输出兼具文化共鸣与商业属性的细节实机展示内容，引发本土玩家强烈共鸣。</p></div>
+      </div>
+      <div class="play">
+        <div class="no">05</div>
+        <div><h3>S 级跨国赛事线下落地统筹</h3>
+        <p>全盘统筹 KIS4 印尼总决赛现场 20+ 达人彩排、流程调度及博物馆等线下场景的内容传播协同，确保跨国大项目落地零失误。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">RESULTS</div>
+    <h2>成果与沉淀</h2>
+    <p class="sec-desc">数据口径：项目全程投放与内容监测汇总。</p>
+    <div class="results">
+      <div class="result"><h4><b>●</b> 流量破圈</h4><p>项目整体累计曝光突破 1200 万+，HOK 游戏锚点精准浏览量达 200 万+，深度覆盖印尼、马来核心游戏人群。</p></div>
+      <div class="result"><h4><b>●</b> 矩阵式覆盖</h4><p>高效联动 20+ 位 KOL/KOC 共产出 27 条高质量视频，覆盖 IP 画作、英雄 COS、展览打卡、路人街访等多维度内容，打造多条 200 万+ 播放的爆款内容。</p></div>
+      <div class="result"><h4><b>●</b> 极致控本</h4><p>整体 CPM 约 $2.3，远低于同类出海游戏行业平均水平，极大提升了客户预算使用效率。</p></div>
+      <div class="result"><h4><b>●</b> 留存及转化优化</h4><p>视频平均完播率达 7%+，平均互动率达 11%+；新模式与新英雄内容点击表现优异，CTR 提升 10%–20%。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="callout">
+      <div class="sec-tag">TAKEAWAY</div>
+      <h2>可复用的方法论</h2>
+      <p>沉淀出「赛事节点 × 剧情化内容 × 本土文化借势」的游戏版本本地化传播方法论，可平移至其他出海游戏市场的版本营销。</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap pager">
+  <a href="index.html#projects"><div class="dir">← 返回</div><div class="name">项目总览</div></a>
+  <a class="next" href="kayou.html"><div class="dir">下一篇项目 →</div><div class="name">卡游 KAYOU × MLBB 印马异业合作</div></a>
+</div>
+
+</body>
+</html>
