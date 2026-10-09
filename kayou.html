@@ -9,7 +9,7 @@
   :root {
     --ink: #1a1a1a; --ink-soft: #55524d; --ink-dim: #9a948c;
     --paper: #fbfaf7; --card: #ffffff; --line: #e8e4dc;
-    --accent: #ffd100; --accent-deep: #633806; --accent-soft: #faeeda;
+    --accent: #8ab4ff; --accent-deep: #1d3f8f; --accent-soft: #e9f0fc;
     --radius: 14px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,26 +28,26 @@
   .topbar .brand { font-weight: 700; color: var(--ink); }
   .topbar .brand span { color: var(--ink-dim); font-weight: 400; }
 
-  .poster { position: relative; overflow: hidden; background: linear-gradient(120deg, #fdf6e3 0%, #faeeda 55%, #f5d98a 100%); }
+  .poster { position: relative; overflow: hidden; background: linear-gradient(120deg, #eef4fd 0%, #e0ebfb 55%, #b9d0f5 100%); }
   .poster .wrap { position: relative; z-index: 1; padding: 88px 24px 56px; }
   .ptag { display: inline-block; font-size: 12.5px; font-weight: 600; background: var(--ink); color: var(--accent); padding: 4px 13px; border-radius: 999px; margin-bottom: 16px; }
   .poster h1 { font-size: clamp(26px, 4.6vw, 40px); font-weight: 700; line-height: 1.35; letter-spacing: -.3px; max-width: 620px; }
   .poster .meta { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
-  .poster .meta span { font-size: 12.5px; color: var(--accent-deep); border: 1px solid #d9b95c; border-radius: 999px; padding: 3px 12px; background: rgba(255,255,255,.55); }
+  .poster .meta span { font-size: 12.5px; color: var(--accent-deep); border: 1px solid #a8c0ea; border-radius: 999px; padding: 3px 12px; background: rgba(255,255,255,.55); }
   .hero-char {
     position: absolute; right: -30px; bottom: -24px; height: 400px; max-width: 46vw; object-fit: contain;
-    filter: drop-shadow(0 14px 26px rgba(99,56,6,.28)); z-index: 0; pointer-events: none;
+    filter: drop-shadow(0 14px 26px rgba(18,58,128,.25)); z-index: 0; pointer-events: none;
   }
   @media (max-width: 760px) { .hero-char { opacity: .5; height: 300px; } .poster .wrap { padding: 64px 24px 44px; } }
 
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; }
   .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
   .stat .num { font-size: 28px; font-weight: 700; letter-spacing: -.5px; }
-  .stat .num b { color: #c9a200; }
+  .stat .num b { color: #2b62d9; }
   .stat .lbl { font-size: 12.5px; color: var(--ink-dim); margin-top: 2px; }
 
   section { padding: 56px 0; }
-  .sec-tag { font-size: 13px; font-weight: 600; color: #c9a200; letter-spacing: 2px; margin-bottom: 8px; }
+  .sec-tag { font-size: 13px; font-weight: 600; color: #2b62d9; letter-spacing: 2px; margin-bottom: 8px; }
   h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
   .sec-desc { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 30px; }
 
@@ -64,7 +64,7 @@
   .results { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .result { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
   .result h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-  .result h4 b { color: #c9a200; }
+  .result h4 b { color: #2b62d9; }
   .result p { font-size: 13.5px; color: var(--ink-soft); }
 
   .callout { background: var(--ink); color: #fff; border-radius: 18px; padding: 34px 36px; }
