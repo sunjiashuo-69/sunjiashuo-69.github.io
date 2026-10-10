@@ -2,43 +2,52 @@
 
 线上地址：**https://sunjiashuo-69.github.io**
 
-托管方式：GitHub Pages（main 分支根目录，push 即自动部署，约 1 分钟生效）。无构建步骤、无依赖、无框架。
+托管方式：GitHub Pages（main 分支根目录，push 即自动部署，约 1 分钟生效；CDN 偶有 1-2 分钟延迟，验证时加 `?v=N` 参数强刷）。无构建步骤、无依赖、无框架。
 
 ## 文件结构
 
-只有两个文件需要关心：
-
-- `index.html` — 整个网站（HTML + CSS 内嵌，无 JS）。改内容只动这一个文件。
-- `README.md` — 本说明，给后续维护者（人或 AI）看。
+```
+index.html        # 首页（全部样式内嵌，无构建）
+hok.html          # HOK KIS4 项目详情页（金色系 STAR 结构）
+kayou.html        # 卡游 × MLBB 项目详情页（黄色系 STAR 结构）
+assets/
+  hok_bg.jpg      # HOK 详情页首屏背景（1920×1080）
+  mlbb_char.png   # 卡游页英雄立绘
+  slide-hok.png   # HOK 复盘 PPT 原片（1600×900）
+  slide-kayou.png # 卡游复盘 PPT 原片（1600×900）
+README.md         # 本说明
+```
 
 ## 修改内容速查
 
-| 想改什么 | 在 index.html 里找 |
+| 想改什么 | 在哪里改 |
 |---|---|
-| 主标题/一句话介绍 | `<h1>` 和 `.hero p.sub` |
-| 三个项目卡片 | `<section id="projects">` 里的 `<article class="card">` |
-| AI 能力板块 | `<section id="ai">` 里的 `.ai-item` |
-| 联系方式（目前是占位符） | `<section id="contact">` 里的 `your-email@example.com` / `your-wechat-id` |
-| 主色（美团黄） | CSS `:root` 里的 `--accent: #ffd100` |
-| 页面标题/SEO | `<title>` 和 `<meta name="description">` |
+| 首页主标题/简介 | `index.html` 的 `<h1>` 和 `.hero p.sub`（两段） |
+| Open to work 徽章 | `index.html` 的 `.badge` |
+| 项目卡片 | `index.html` 的 `<section id="projects">` 里 `<article class="card">` |
+| AI 工作流板块 | `index.html` 的 `.ai-band` 里 `.ai-item` |
+| 联系方式/寻求新机会 | `index.html` 的 `<section id="contact">`（QQ/Gmail 为 mailto 直达，微信点击复制 s1264024887） |
+| 详情页 STAR 内容 | `hok.html` / `kayou.html` 里搜 `SITUATION / TASK`（S/T 卡片）、`ACTION`（打法）、`RESULT`（成果）、`TAKEAWAY`（方法论） |
+| 详情页主色 | 各文件 `:root` 的 `--accent`（HOK 金色 #ffd100，卡游黄色 #ffd100） |
+| 复盘 PPT 原片图 | `assets/slide-hok.png` / `slide-kayou.png`（直接替换同名文件，1600×900） |
+| 页面标题/SEO | 各文件 `<title>` 和 `<meta name="description">` |
 
-## 标准修改流程（给 AI 工具 / 开发者）
+## 本机免登录说明（重要）
 
-```bash
-# 1. 克隆（首次）
-git clone https://github.com/sunjiashuo-69/sunjiashuo-69.github.io.git
-cd sunjiashuo-69.github.io
+这台电脑已配置好 GitHub 推送凭证，任何 AI 工具（WorkBuddy / Codex / Claude Code 等）**无需再登录**：
 
-# 2. 修改 index.html 后本地预览：直接双击 index.html 或
-open index.html
+- macOS 钥匙串存有 Personal Access Token（账户 `sunjiashuo-69`，名为 `catpaw-github-push`），标准 git 凭证条目也已写入，`git push` 直接可用；
+- 环境变量 `GH_TOKEN` 已在 `~/.zshrc` / `~/.zprofile` 配置（从钥匙串读取），沙箱环境里拿不到钥匙串时可以用它；
+- 网络偶发抖动时，用 `git -c http.version=HTTP/1.1 push` 重试 2-3 次即可。
 
-# 3. 提交并推送（push 后网站自动更新）
-git add index.html
-git commit -m "update: 修改说明"
-git push
-```
+## 在 WorkBuddy 上承接修改（推荐流程）
 
-推送需要 GitHub 身份验证（HTTPS Personal Access Token，repo 权限即可；或 SSH key）。首次在本机用 AI 工具操作时，让 AI 引导你完成 GitHub 登录授权即可。
+1. **打开项目**：让 WorkBuddy 把工作目录指向本文件夹（`~/Desktop/雅思学习计划/portfolio-site`）。它就是 git 仓库本身，不需要重新 clone。
+2. **直接说需求**：例如「把首页 hero 的第二段简介改成……」「卡游详情页加一条打法」。改动只涉及 HTML 纯文本，任何 AI 都能处理。
+3. **让它提交推送**：「commit 并 push 到 GitHub」。push 成功后约 1 分钟线上生效。
+4. **验收**：浏览器打开 https://sunjiashuo-69.github.io 强刷（Cmd+Shift+R），或加 `?v=1` 参数绕过 CDN 缓存。
+
+如果是全新环境（换了电脑），先 `git clone https://github.com/sunjiashuo-69/sunjiashuo-69.github.io.git`，再让 AI 引导完成一次 GitHub 授权（HTTPS Personal Access Token，repo 权限即可）。
 
 ## 注意事项
 
