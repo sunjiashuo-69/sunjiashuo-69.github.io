@@ -95,6 +95,12 @@ background: url('assets/hok_bg.jpg?v=2') center/cover no-repeat;
   .cover-hok .tag { background: #185fa5; color: #fff; }
   .cover-ky { background: #f1efe8 url('assets/cover_kayou_banner.jpg') center/cover no-repeat; }
   .cover-ky .tag { background: #444441; color: #fff; }
+.mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mini-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.mini-card .mini-img { height: 190px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.mini-card .mini-body { padding: 14px 18px 16px; }
+.mini-card h4 { font-size: 15px; font-weight: 700; }
+.mini-card p { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
   .card .body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
   .card h3 { font-size: 17px; font-weight: 700; }
   .card .role { font-size: 12px; color: var(--ink-dim); margin: 2px 0 10px; }
@@ -143,6 +149,8 @@ background: url('assets/hok_bg.jpg?v=2') center/cover no-repeat;
     .nav-links { display: none; }
     .hero { padding: 56px 0 44px; }
     .projects, .ai-grid { grid-template-columns: 1fr; }
+    .mini-grid { grid-template-columns: 1fr; }
+    .mini-card .mini-img { height: 220px; }
     section { padding: 52px 0; }
     .ai-band { padding: 32px 24px; }
   }
@@ -206,6 +214,24 @@ background: url('assets/hok_bg.jpg?v=2') center/cover no-repeat;
           <div class="more"><a href="hanburger.html" style="color:inherit; text-decoration:none;"><span>查看汉堡节项目复盘 →</span></a></div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">MORE COLLABS</div>
+    <h2>其他合作案例</h2>
+    <p class="sec-desc">除以上深度复盘的项目外，另参与落地的部分合作。</p>
+    <div class="mini-grid">
+      <div class="mini-card">
+        <div class="mini-img" style="background-image:url('assets/dragon_traveler.jpg');"></div>
+        <div class="mini-body"><h4>龙魂旅人 · 东南亚 CBT 营销</h4><p>游戏出海 · 东南亚市场 · 封测（CBT）期内容营销</p></div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-img" style="background-image:url('assets/joox_ive_secret.jpg'); background-position: center 30%;"></div>
+        <div class="mini-body"><h4>腾讯 JOOX · 泰国 TMB 星光卡营销</h4><p>音乐流媒体 · 泰国市场 · IVE 典藏星光卡推广</p></div>
+      </div>
     </div>
   </div>
 </section>
