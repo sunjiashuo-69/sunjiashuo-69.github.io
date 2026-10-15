@@ -117,6 +117,13 @@
   .pager .name { font-size: 14.5px; font-weight: 600; margin-top: 2px; }
   .pager a.next { text-align: right; }
 
+  .tt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tt-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+  .tt-card iframe { width: 100%; flex: 1; min-height: 560px; border: 0; display: block; }
+  .tt-card .tt-link { display: block; text-align: center; font-size: 12.5px; color: var(--ink-soft); text-decoration: none; padding: 9px 10px; border-top: 1px solid var(--line); }
+  .tt-card .tt-link:hover { color: var(--ink); background: var(--paper); }
+  .tt-note { font-size: 12.5px; color: var(--ink-dim); margin-top: 14px; }
+
   .deck-shot img {
     width: 100%; display: block; border-radius: 16px; border: 1px solid var(--line);
     box-shadow: 0 18px 40px rgba(26,26,26,.10); transition: transform .25s, box-shadow .25s;
@@ -126,6 +133,8 @@
 
   @media (max-width: 760px) {
     .stats, .results, .st-grid { grid-template-columns: 1fr 1fr; }
+    .tt-grid { grid-template-columns: 1fr; }
+    .tt-card iframe { min-height: 520px; }
     .poster-in { padding: 80px 0 36px; }
     section { padding: 44px 0; }
   }
@@ -213,7 +222,30 @@
   </div>
 </section>
 
-<section>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">CONTENT GALLERY</div>
+    <h2>传播素材实拍</h2>
+    <p class="sec-desc">KIS4 合作产出的部分 KOL 内容原片，可直接播放（TikTok 嵌入）。</p>
+    <div class="tt-grid">
+      <div class="tt-card">
+        <iframe src="https://www.tiktok.com/embed/v2/7599218071328328981" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="KIS4 合作内容 1"></iframe>
+        <a class="tt-link" href="https://www.tiktok.com/@faixveyivy/video/7599218071328328981" target="_blank" rel="noopener">无法播放？在 TikTok 打开 ↗</a>
+      </div>
+      <div class="tt-card">
+        <iframe src="https://www.tiktok.com/embed/v2/7603349374764190994" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="KIS4 合作内容 2"></iframe>
+        <a class="tt-link" href="https://www.tiktok.com/@ricodwichy/video/7603349374764190994" target="_blank" rel="noopener">无法播放？在 TikTok 打开 ↗</a>
+      </div>
+      <div class="tt-card">
+        <iframe src="https://www.tiktok.com/embed/v2/7605594677848362261" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy" title="KIS4 合作内容 3"></iframe>
+        <a class="tt-link" href="https://www.tiktok.com/@rifky_bonsay/video/7605594677848362261" target="_blank" rel="noopener">无法播放？在 TikTok 打开 ↗</a>
+      </div>
+    </div>
+    <p class="tt-note">内容版权归各创作者与项目方所有，仅作个人项目复盘展示用途。</p>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
   <div class="wrap">
     <div class="deck-shot">
       <div class="sec-tag">ORIGINAL DECK</div>
