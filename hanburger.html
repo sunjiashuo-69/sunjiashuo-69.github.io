@@ -34,8 +34,10 @@
     background: linear-gradient(135deg, #ffd100 0%, #ffc400 55%, #f0a800 100%); overflow: hidden;
   }
   .poster::before {
-    content: "🍔"; position: absolute; right: 4vw; top: 50%; transform: translateY(-54%);
-    font-size: clamp(120px, 18vw, 220px); opacity: .92; filter: drop-shadow(0 14px 30px rgba(99,56,6,.28));
+    content: ""; position: absolute; right: 4vw; top: 50%; transform: translateY(-54%);
+    width: clamp(150px, 19vw, 250px); aspect-ratio: 1 / 1;
+    background: url('assets/kangaroo_q.png') center/contain no-repeat;
+    filter: drop-shadow(0 14px 30px rgba(99,56,6,.30));
   }
   .poster::after {
     content: ""; position: absolute; inset: 0;
@@ -114,7 +116,7 @@
     .stats, .results, .st-grid { grid-template-columns: 1fr 1fr; }
     .poster-in { padding: 80px 0 36px; }
     section { padding: 44px 0; }
-    .poster::before { opacity: .35; right: -6vw; }
+    .poster::before { opacity: .85; right: -4vw; width: 200px; }
   }
   @media (max-width: 480px) {
     .stats, .results, .st-grid { grid-template-columns: 1fr; }
