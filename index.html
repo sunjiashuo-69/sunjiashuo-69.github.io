@@ -76,11 +76,19 @@
     overflow: hidden; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column;
   }
   .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(26,26,26,.08); }
-  .card .cover { height: 110px; display: flex; align-items: flex-end; padding: 14px 18px; }
-  .card .cover .tag { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+  .card .cover { position: relative; height: 110px; display: flex; align-items: flex-end; padding: 14px 18px; overflow: hidden; }
+  .card .cover .tag { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; position: relative; z-index: 1; }
+  .cover-el {
+    position: absolute; right: 16px; bottom: -12px; height: 122px;
+    filter: drop-shadow(0 6px 14px rgba(26,26,26,.18));
+  }
   .cover-mt { background: var(--accent-soft); }
   .cover-mt .tag { background: var(--accent); color: var(--ink); }
-  .cover-hok { background: #e6f1fb; }
+  .cover-hok {
+    background:
+      linear-gradient(90deg, rgba(230,241,251,.97) 0%, rgba(230,241,251,.72) 42%, rgba(230,241,251,.08) 100%),
+      url('assets/hok_bg.jpg') center/cover no-repeat;
+  }
   .cover-hok .tag { background: #185fa5; color: #fff; }
   .cover-ky { background: #f1efe8; }
   .cover-ky .tag { background: #444441; color: #fff; }
@@ -178,7 +186,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="cover cover-ky"><span class="tag">快消 · IP 卡牌</span></div>
+        <div class="cover cover-ky"><img class="cover-el" src="assets/mlbb_char.png" alt="MLBB 角色"><span class="tag">快消 · IP 卡牌</span></div>
         <div class="body">
           <h3>卡游 × MLBB 新系列上市</h3>
           <div class="role">渠道与内容营销 · 项目复盘</div>
@@ -187,7 +195,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="cover cover-mt"><span class="tag">本地生活 · 平台运营</span></div>
+        <div class="cover cover-mt"><img class="cover-el" src="assets/golden_burger.png" alt="金汉堡"><span class="tag">本地生活 · 平台运营</span></div>
         <div class="body">
           <h3>美团 · KA 大客户经营</h3>
           <div class="role">商家运营 / KA 大客户经理 · 2026.07 – 2026.10</div>
