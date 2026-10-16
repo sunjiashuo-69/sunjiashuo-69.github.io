@@ -95,6 +95,17 @@
   .callout h2 { color: #fff; font-size: 22px; }
   .callout p { color: #b8b4ad; font-size: 14.5px; margin-top: 8px; }
 
+  .xhs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .xhs-card { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .18s, box-shadow .18s; }
+  .xhs-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(26,26,26,.12); }
+  .xhs-card .xhs-head { display: flex; align-items: center; gap: 8px; padding: 13px 16px; }
+  .xhs-card .xhs-logo { width: 22px; height: 22px; border-radius: 6px; background: #ff2442; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .xhs-card .xhs-head span { font-size: 12.5px; color: var(--ink-dim); }
+  .xhs-card .xhs-title { padding: 0 16px 6px; font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.45; }
+  .xhs-card .xhs-sub { padding: 0 16px 15px; font-size: 12.5px; color: var(--ink-soft); }
+
+  @media (max-width: 760px) { .xhs-grid { grid-template-columns: 1fr; } }
+
   .pager { border-top: 1px solid var(--line); padding: 30px 0 60px; display: flex; justify-content: space-between; gap: 12px; }
   .pager a {
     flex: 1; text-decoration: none; color: var(--ink); background: var(--card);
@@ -208,6 +219,26 @@
       <h2>复盘原片</h2>
       <p class="sec-desc">项目一页纸复盘 PPT（16:9），点击可查看大图。</p>
       <a href="assets/slide-hanburger.png" target="_blank" title="点击查看大图"><img src="assets/slide-hanburger.png" alt="美团外卖首届汉堡节 KA 项目复盘 PPT"></a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="sec-tag">CONTENT GALLERY</div>
+    <h2>传播素材 · 小红书</h2>
+    <p class="sec-desc">美团外卖汉堡节官方在小红书发布的联合传播内容（小红书不支持站内嵌入，点击卡片直达原文）。</p>
+    <div class="xhs-grid">
+      <a class="xhs-card" href="https://www.xiaohongshu.com/explore/6a7f18610000000005032ad0?xsec_token=ABYFAlcP3ECRzYw5mdqdOHpVywcPdDRj59Px37lSj1ueI=&xsec_source=pc_user" target="_blank" rel="noopener">
+        <div class="xhs-head"><span class="xhs-logo">红</span><span>小红书 · 官方笔记</span></div>
+        <div class="xhs-title">美团外卖首届汉堡节 · 联合传播内容 ①</div>
+        <div class="xhs-sub">点击卡片，在小红书 App / 网页端查看原笔记 ↗</div>
+      </a>
+      <a class="xhs-card" href="https://www.xiaohongshu.com/explore/6a85b4c500000000050291cf?xsec_token=CB9f6Tco7lsbYa8aGFgFbejV6BzDKSggarXUfCjqE7fmw=&xsec_source=pc_feed" target="_blank" rel="noopener">
+        <div class="xhs-head"><span class="xhs-logo">红</span><span>小红书 · 官方笔记</span></div>
+        <div class="xhs-title">美团外卖首届汉堡节 · 联合传播内容 ②</div>
+        <div class="xhs-sub">点击卡片，在小红书 App / 网页端查看原笔记 ↗</div>
+      </a>
     </div>
   </div>
 </section>
